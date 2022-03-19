@@ -1,4 +1,5 @@
 <?php
+global $dbh;
 try {
     $user = "root";
     $pass = "admin";

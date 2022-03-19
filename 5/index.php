@@ -19,7 +19,7 @@
     </div>
     <form class="form control mt-4" action="addCountry.php" method="post">
         <label for="inputCountry" class="form-label">Input Country</label>
-        <input type="text" class="form-control" name="country">
+        <input id="inputCountry" type="text" class="form-control" name="country">
         <button type="submit" class="btn btn-primary mt-2">Submit</button>
     </form>
 </div>
