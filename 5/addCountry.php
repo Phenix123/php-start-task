@@ -4,7 +4,7 @@ require_once("connector.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    if (isset($_POST['country'])) {
+    if (isset($_POST['country']) && isset($dbh)) {
         $country = $_POST['country'];
 
         $query = $dbh->prepare("INSERT INTO countries (name) VALUES (?)");
