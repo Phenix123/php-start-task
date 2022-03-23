@@ -12,7 +12,9 @@
     <h3>All News</h3>
     <?php
     require_once("main.php");
-    echo "<p>$a</p>"
+    if (isset($a)) {
+        echo "<p>$a</p>";
+    }
     ?>
 </div>
 </body>
