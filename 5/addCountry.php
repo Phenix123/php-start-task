@@ -1,11 +1,18 @@
 <?php
 
 require_once("connector.php");
-$country = "\"" . $_POST['country'] . "\"";
 
-$query = "INSERT INTO countries (name) VALUES (" . $country . ")";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-$dbh->query($query);
+    if (isset($_POST['country'])) {
+        $country = $_POST['country'];
+
+        $query = $dbh->prepare("INSERT INTO countries (name) VALUES (?)");
+        $query->execute([$country]);
+
+        $dbh->query($query);
+
+    }
+}
 $dbh = null;
-
 header("Location: ./index.php");
